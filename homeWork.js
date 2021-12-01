@@ -1,5 +1,4 @@
-////// ete arrayi index@ 2ic avela elementner@ het araj anel
-
+////////// եթե array-ի indexը 2-ից ավելա տարրերը հետ առաջ անել
 function swap(arr) {
   if (arr.length < 2) {
     return arr
@@ -14,7 +13,7 @@ function swap(arr) {
 //console.log(swap([1]))
 //console.log(swap([1,2,3,4]))
 
-////// aranc 3rd popoxakani leteri arjeqner@ texerov poxel
+////////// առանց երրորդ փոփոխականի եղածները տեղերով փոխել
 
 let a = 1,
     b = 2;
@@ -25,7 +24,7 @@ let a = 1,
 [a, b] = [b, a]
 // console.log(a,b)
 
-////// getը վերադարձնի երկու arg մեկը arrayը մյուսը վերջինիս indexը, եթե indexը չկա բերի null 
+////////// getը վերադարձնի երկու arg մեկը arrayը մյուսը վերջինիս indexը, եթե indexը չկա բերի null 
 
 const cities = ['moscow', 'london', 'berlin', 'porto'];
 
@@ -36,13 +35,13 @@ function get(array, index) {
 // console.log(get(cities, 1))
 // console.log(get(cities, 2))
 
-////// addPrefixը  վերադարձնի նոր array որտեղ namesի արժեքներն են դիմացը ավելացրած prefix, չփոխելով օրեգինալ arrayը
+////////// addPrefixը  վերադարձնի նոր array որտեղ namesի արժեքներն են դիմացը ավելացրած prefix, չփոխելով օրեգինալ arrayը
 
 const names = ['john', 'smith', 'karl'];
 
 function addPrefix(array, prefix) {
   const array_2 = []
-  for (let i = 0; i < array.length; i++) {
+  for (let i=0; i<array.length; i++) {
     const array_3 = `${prefix} ${array[i]}`
     // const array_3 = `${prefix} ${array[i][0].toUpperCase() + array[i].slice(1)}` //եթե պետք լինի ամեն անունը մեծատառով սկսի
     array_2.push(array_3)
@@ -54,7 +53,7 @@ const newNames = addPrefix(names, "Mr ")
 // console.log(newNames)
 // console.log(names)
 
-////// function որը ամեն կանչելուց իրեն տրված arrayը շրջում է
+////////// function որը ամեն կանչելուց իրեն տրված arrayը շրջում է
 
 const names_2 = ['john', 'smith', 'karl'];
 const newNames_2 = array => array.reverse();
@@ -65,14 +64,14 @@ const newNames_2 = array => array.reverse();
 
 function nr(arr) {
   let rev = []
-  for (let i = arr.length - 1; i >= 0; --i) {
+  for (let i=arr.length-1; i>=0; --i) {
     rev.push(arr[i])
   }
   return rev
 }
 //console.log(nr(names_2))
 
-////// function որը գումարում է իրար arrayի այն արժեքնեը, որոնք առանց մնացորդի 3ի են բաժանվում 
+////////// function որը գումարում է իրար arrayի այն արժեքնեը, որոնք առանց մնացորդի 3ի են բաժանվում 
 
 const coll1 = [8, 9, 21, 19, 18, 22, 7];
 const coll2 = [2, 0, 17, 3, 9, 15, 4];
@@ -90,13 +89,13 @@ function calculateSum(array) {
 // calculateSum(coll2)
 // calculateSum(coll3)
 
-////// function որը վերադարձնում է arrayի միջին թվաբանական արժեքը
+////////// function որը վերադարձնում է arrayի միջին թվաբանական արժեքը
 
 function calculateAverage(array) {
   let amountInt = 0,
     summa = 0,
     result;
-  for (let i = 0; i < array.length; i++) {
+  for (let i=0; i<array.length; i++) {
     if (array[i]) {
       amountInt += 1
       summa += array[i];
@@ -110,11 +109,11 @@ const temperatures2 = [36, 37.4, 39, 41, 36.6];
 // console.log(calculateAverage(temperatures1))
 // console.log(calculateAverage(temperatures2))
 
-////// function որը ըստ arrayի առաջին արժեքի մնացորդի հաշվում է և վերադարձնում արժեքը
+////////// function որը ըստ arrayի առաջին արժեքի մնացորդի հաշվում է և վերադարձնում արժեքը
 
 function getSameParity(array) {
   let newArray = [],
-    sum = array[0] % 2;
+      sum = array[0] % 2;
 
   for (let i = 0; i < array.length; i++) {
     if (array[i] % 2 === sum) newArray.push(array[i]);
@@ -127,10 +126,10 @@ function getSameParity(array) {
 // console.log(getSameParity([1, 2, 8]))
 // console.log(getSameParity([2, 2, 8]))
 
-////// ամեն տողի առաջին տառը մեծացնում է 
+////////// ամեն տողի առաջին տառը մեծացնում է 
 
 const nameArrfull = ["aram lilit"],
-  nameArr = ["karen", "anna"];
+      nameArr = ["karen", "anna"];
 
 const nameArrfull_2 = nameArrfull.map((e) => {
   let wordSplit = Array.from(e.split(" "))
@@ -143,7 +142,7 @@ const nameArr_2 = nameArr.map(e => e[0].toUpperCase() + e.slice(1))
 // console.log(nameArrfull_2)
 // console.log(nameArr_2)
 
-////// դաասակարգում ըստ հերթականության
+////////// դաասակարգում ըստ հերթականության
 
 const numbArr = [1, 50, 2, 65, 3, 48, 15, 48, 8, 200]
 // console.log(numbArr.sort((a,b) => a-b))
@@ -636,7 +635,8 @@ function polindrom(str){
 // console.log(polindrom("abba"))
 
 
-////////////// Just Homeworks
+////////////// ֆունկցիան իր անունին հարիր մաթեմաթիկական արժեք
+
 function one(n){
   if(n) return n(1)
   return 1
@@ -670,8 +670,10 @@ function byField(field){
 //console.log(users.sort(byField("age")))
 
 
-function sort(arr){
-  
+
+
+////////////// սորտավորում
+function sort(arr){  
   for(let i=1; i<arr.length; i++){
     for(let j=0; j<arr.length; j++){
       if(arr[i] < arr[j]){
@@ -681,7 +683,6 @@ function sort(arr){
       }
     }
   }
-
   return arr
 }
 
@@ -720,6 +721,8 @@ function firstNonRepeatingLetter_1(string){
 //console.log(firstNonRepeatingLetter_1("stress"))
 
 
+
+
 //////////Մեծատառերը փոքրատառ ու հակառակը
 
 function replaceWord(str){
@@ -737,6 +740,8 @@ function replaceWord(str){
 }
 
 //console.log(replaceWord("HaruT"))
+
+
 
 
 //////////Մեծատառերը փոքրատառ ու հակառակը in Array
@@ -759,5 +764,44 @@ function repArr(array){
   return newArr
 }
 
-console.log(repArr(["lOl", "Kek", "aZaZ"]))
+//console.log(repArr(["lOl", "Kek", "aZaZ"]))
 
+
+function min(arr){
+  let min = arr[0]
+  for(let i=0;i<arr.length;i++){
+    if(min < arr[i]){
+      min = arr[i]
+    }
+  }
+  return min
+}
+
+//console.log(min([11,2,3,45,6]))
+
+
+//////////Օբյեկտի միջի ամենացածր գուարով մարդը և թիվը
+const humans = {
+  Joe : 250,
+  Mary: 400,
+  Andy: 200
+}
+
+function objMin(obj){
+  let newObj = {},
+      min,
+      minHum
+
+  for(let iteam in obj){
+    for(let iteam1 in obj){
+      if(obj[iteam] > obj[iteam1]){
+        min = obj[iteam1] 
+        minHum = iteam1     
+      }
+    }
+  }
+  newObj[minHum] = min
+  return newObj
+}
+
+console.log(objMin(humans))
