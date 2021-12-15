@@ -278,7 +278,7 @@ let findeNamberArrayMax_2 = Math.max(...namberArrayMax)
 
 let test = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 let start = test[0]
-for (let i = 0; i < test.length; i++) {
+for (let i=0; i<test.length; i++) {
   if (test[i] > start) {
     start = test[i]
   }
@@ -332,11 +332,7 @@ const objID = {
   age: 27,
   male: true
 };
-let {
-  name,
-  age: year,
-  isAdmin = false
-} = objID
+let { name, age:year, isAdmin=false } = objID
 
 //console.log(name,year,isAdmin)
 
@@ -365,7 +361,7 @@ function salResult(obj) {
 
 function plus(n) {
   let sum = 0
-  for (let i = 0; i <= n; i++) {
+  for (let i=0; i<=n; i++) {
     sum += i
   }
   return sum
@@ -376,7 +372,7 @@ let arr = [1, 2, 5, 2];
 
 function arraySum(array) {
   let sum = 0
-  for (let i = 0; i < array.length; ++i) {
+  for (let i=0; i<array.length; ++i) {
     sum += array[i]
   }
   return sum
@@ -409,7 +405,7 @@ const gol = [1, 21, 3, 5, 6, 11, 1, 3]
 
 function max(array) {
   let sum = 0
-  for (let i = 0; i < array.length; i++) {
+  for (let i=0; i<array.length; i++) {
     if (array[i] > sum) {
       sum = array[i]
     }
@@ -476,16 +472,16 @@ A = A - B
 
 // console.log(lee2())
 
-const formm = document.querySelector(".form")
-const inputt = document.querySelector(".input")
-const divv = document.querySelector(".divv")
+// const formm = document.querySelector(".form")
+// const inputt = document.querySelector(".input")
+// const divv = document.querySelector(".divv")
 
-formm.addEventListener("submit", (e) => {
-  e.preventDefault()
-  const newP = document.createElement("p")
-  newP.innerHTML = inputt.value
-  divv.appendChild(newP)
-})
+// formm.addEventListener("submit", (e) => {
+//   e.preventDefault()
+//   const newP = document.createElement("p")
+//   newP.innerHTML = inputt.value
+//   divv.appendChild(newP)
+// })
 
 
 function xo(n){
@@ -804,4 +800,79 @@ function objMin(obj){
   return newObj
 }
 
-console.log(objMin(humans))
+//console.log(objMin(humans))
+
+let hum1 = { name:"Ara" }
+let hum2 = { name:"Mari" }
+let hum3 = { name:"Lol"}
+
+function allH(){ return this.name }
+
+//console.log(allH.call(hum1))
+
+// for(let i=0; i<10; i++) {
+//   setTimeout(function() {
+//     alert(i);
+//   }, 100);
+// }
+
+
+///////////////զանգավծի միջից ստանալ նշված թվերի մեջտեղով անցնող թվերը
+let array = [1,2,3,4,5,6,7,8]
+
+function between(arr,a,b){
+	let result = []
+	for(let i=0; i<arr.length; i++){
+  	if(a<=arr[i] && b>=arr[i]){
+    	result.push(arr[i])
+    }
+  }
+  return result
+}
+
+
+///////////////ինպուտից վերձնել արժեքը և նկարել էկրանի առաջին տառը
+
+// const form = document.querySelector(".upForm")
+// const upInput = document.querySelector(".upper")
+// const upDiv = document.querySelector(".upRes")
+
+// form.addEventListener("submit", (e) => {
+//   e.preventDefault()
+//   const result = upInput.value
+//   const inpVal = result[0].toUpperCase() + result.slice(1)
+
+//   const newDiv = document.createElement("p")
+//   newDiv.innerHTML = inpVal
+//   upDiv.appendChild(newDiv)
+//   upInput.value = ""  
+  
+//     if(!isNaN(result)){
+//       newDiv.innerHTML = "first one can't be a number"
+//     }
+//   }
+// )
+
+function inc(){
+  var ccc = 0
+  return ccc++
+}
+// console.log(inc())
+// console.log(inc())
+// console.log(inc())
+
+
+/////////////// ջնջել դիվը ըստ նրա կոճակի
+let btnn = document.querySelectorAll(".remove")
+let div = document.querySelectorAll(".iamges")
+
+for(let i=0; i<btnn.length; i++){
+    btnn[i].addEventListener("click", () => {
+        div[i].remove()
+    })
+}
+btnn.forEach((e) => {
+    e.addEventListener("click", (o) => {
+        div[o].remove()
+    })
+})
