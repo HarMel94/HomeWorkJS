@@ -876,3 +876,35 @@ btnn.forEach((e) => {
         div[o].remove()
     })
 })
+
+
+
+
+///////////////  ֆունկցիա որը տարեդարձի օրի առանձնացնում է գծերը ու տող վերադարձնում,առաջին դեպքում ուղիղ մյուսում Ռեվերս
+function birdDay(numb){
+  const splitid = numb.split("")
+  let result = []
+
+  for(let i=0; i<splitid.length; i++){
+    if(splitid[i] !== "/"){
+      result.push(splitid[i])
+    }
+  }
+
+  return result.join("")
+}
+
+function revBirdDay(numb){
+  const [fDay,sDay] = numb
+  const [,,,fMont,sMont] = numb
+  const [,,,,,,...year] = numb
+
+  const result = [year.join(""),fMont,sMont,fDay,sDay]
+  const result2 = `${year.join("")}.${fMont+sMont}.${fDay+sDay}`
+
+  //return result.join("") ////առանց կետեր
+  return result2           ////կետերով
+}
+
+console.log(birdDay("12/08/1994"))
+console.log(revBirdDay("12/08/1994"))
