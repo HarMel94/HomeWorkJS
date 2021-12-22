@@ -196,10 +196,10 @@ const obj = {
 }
 //const obj2 = Object.assign({}, obj)  
 const obj2 = JSON.parse(JSON.stringify(obj))
-obj.a = 4
 
 // console.log(obj)
 // console.log(obj2)
+
 
 //////  function որը ստուգում է փակագծերի բալաանսը
 
@@ -906,5 +906,23 @@ function revBirdDay(numb){
   return result2           ////կետերով
 }
 
-console.log(birdDay("12/08/1994"))
-console.log(revBirdDay("12/08/1994"))
+// console.log(birdDay("12/08/1994"))
+// console.log(revBirdDay("12/08/1994"))
+
+
+
+/////////////// երկու առայներից վերադարձնել կրկնվողարժեքները
+let firstArray = [1,2,3,4]
+let secondArray = [3,4,5,6]
+
+function returnCopy(a,b){
+  let newArr = []
+  for(let i=0; i<a.length;i++){
+    for(let j=0; j<b.length;j++){
+      if(a[i] === b[j]) newArr.push(a[i])
+    }
+  }
+  return newArr
+}
+
+console.log(returnCopy(firstArray,secondArray))
