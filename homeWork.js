@@ -911,7 +911,7 @@ function revBirdDay(numb){
 
 
 
-/////////////// երկու առայներից վերադարձնել կրկնվողարժեքները
+/////////////// երկու առայներից վերադարձնել կրկնվող արժեքները
 let firstArray = [1,2,3,4]
 let secondArray = [3,4,5,6]
 
@@ -924,5 +924,48 @@ function returnCopy(a,b){
   }
   return newArr
 }
+//console.log(returnCopy(firstArray,secondArray))
 
-console.log(returnCopy(firstArray,secondArray))
+
+/////////////// երկու առայներից վերադարձնել չկրկնվող արժեքները
+function notreturn(a,b){
+  let newArr = []
+  for(let i=0;i<a.length;i++){
+    if(!b.includes(a[i])){
+      newArr.push(a[i])
+    } else {
+      newArr.push(b[i])
+    }
+  }
+  return newArr
+}
+//console.log(notreturn(firstArray,secondArray))
+
+
+function add(a,b){
+  if(b) return a + b
+  
+  return (b) => {
+    return a + b
+  }
+}
+
+// console.log(add(1,2))
+// console.log(add(12)(2))
+
+
+const objj = {
+  user : "Aram",
+  getname : function(){
+    return this.user
+  } 
+}
+
+const objj2 = {
+  user : "Karen"
+}
+
+const ff1 = objj.getname
+const ff2 = ff1.bind(objj2)
+
+console.log(ff2())
